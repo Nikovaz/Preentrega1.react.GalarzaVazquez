@@ -1,0 +1,32 @@
+.cart-widget {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  
+    button {
+      background-color: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+      margin-right: 10px;
+      transition: background-color 0.3s ease;
+  
+      &:last-child {
+        background-color: black;
+      }
+    }
+  
+    span {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  
+    img {
+      width: 40px;
+      margin-left: 10px;
+    }
+  }
+  
