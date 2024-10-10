@@ -1,0 +1,560 @@
+[
+    {
+        "id": 1,
+        "title": "Batik azul",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg" : "https://http2.mlstatic.com/D_NQ_NP_2X_869041-MLA74040826889_012024-F.webp"
+    },
+    {
+        "id": 2,
+        "title": "Batik negro",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_769243-MLA74040826911_012024-F.webp"
+    },
+    {
+        "id": 3,
+        "title": "Batik naranja",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_663066-MLA73936668720_012024-F.webp"
+    },
+    {
+        "id": 4,
+        "title": "Batik verde",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_745811-MLA73936718448_012024-F.webp"
+    },
+    {
+        "id": 5,
+        "title": "Batik gris",
+        "description": "  ",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_678459-MLA73936698488_012024-F.webp"
+    },
+    {
+        "id": 6,
+        "title": "Batik celeste",
+        "description": "  ",
+        "price": 9000,
+        "category": "Estampados batik",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_955508-MLA74040225519_012024-F.webp"
+    },
+    
+    {
+        "id": 8,
+        "title": "Boxer tokio blanco y roso",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados tokio",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_803242-MLA74040820041_012024-F.webp"
+    },
+    {
+        "id": 9,
+        "title": "Boxer tokio azul",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados tokio",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_678308-MLA73937569380_012024-F.webp"
+    },
+    {
+        "id": 10,
+        "title": "Boxer tokio negro",
+        "description": "",
+        "price": 9000,
+        "category": "Estampados tokio",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_621441-MLA74040830003_012024-F.webp"
+    },
+    {
+        "id": 11,
+        "title": "Boxer camuflado gris",
+        "description": "",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_767216-MLA74039961951_012024-F.webp"
+    },
+    {
+        "id": 12,
+        "title": "Boxer camuflado rojo",
+        "description": " ",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_764067-MLA74039901905_012024-F.webp"
+    },
+    {
+        "id": 13,
+        "title": "Boxer camuflado verde",
+        "description": " ",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_836077-MLA74039991677_012024-F.webp"
+    },
+    {
+        "id": 14,
+        "title": "Bóxer Psycho Flower coral",
+        "description": "  ",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_683802-MLA77005243521_062024-F.webp"
+    },
+    {
+        "id": 15,
+        "title": "Bóxer Psycho Flower rojo",
+        "description": "",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_683802-MLA77005243521_062024-F.webp"
+    },
+    {
+        "id": 16,
+        "title": "Bóxer Psycho Flower gris",
+        "description": " ",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_761890-MLA77005243605_062024-F.webp"
+    },
+    {
+        "id": 17,
+        "title": "Bóxer Psycho Flower turquesa",
+        "description": " ",
+        "price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_701429-MLA77006117085_062024-F.webp"
+    },
+    {
+        "id": 18,
+        "title": "Bóxer Psycho Flower verde claro",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_740598-MLA77006116891_062024-F.webp"
+    },
+    {
+        "id": 19,
+        "title": "Bóxer Jaspeados gris",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_796260-MLA73936715852_012024-F.webp"
+    },
+    {
+        "id": 20,
+        "title": "Bóxer Jaspeados aqua",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_711602-MLA73936453558_012024-F.webp"
+    },
+    {
+        "id": 21,
+        "title": "Bóxer Jaspeados coral",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_788891-MLA73936373532_012024-F.webp"
+    },
+    {
+        "id": 22,
+        "title": "Bóxer Jaspeados francia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_608676-MLA74039887183_012024-F.webp"
+    },
+    {
+        "id": 23,
+        "title": "Bóxer Jaspeados lila",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_972026-MLA73936647362_012024-F.webp"
+    },
+    {
+        "id": 24,
+        "title": "Bóxer Jaspeados fucsia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_831332-MLA73936333960_012024-F.webp"
+    },
+    {
+        "id": 25,
+        "title": "Bóxer Jaspeados turquesa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_867398-MLA73936363538_012024-F.webp"
+    },
+    {
+        "id": 26,
+        "title": "Bóxer Jaspeados rosa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_897798-MLA74039966993_012024-F.webp"
+    },
+    {
+        "id": 27,
+        "title": "Bóxer Jaspeados rojo",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_763777-MLA74039897157_012024-F.webp"
+    },
+    {
+        "id": 28,
+        "title": "Bóxer Italian azul",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_681500-MLA73937163380_012024-F.webp"
+    },
+    {
+        "id": 29,
+        "title": "Bóxer Italian negro",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_983319-MLA74040542149_012024-F.webp"
+    },
+    {
+        "id": 30,
+        "title": "Bóxer Italian rojo",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_975248-MLA74040512995_012024-F.webp"
+    },
+    {
+        "id": 31,
+        "title": "Bóxer Italian turquesa",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_996728-MLA73937133264_012024-F.webp"
+    },
+    {
+        "id": 32,
+        "title": "Bóxer Palmeras fucsia",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_759182-MLA74039524153_012024-F.webp"
+    },
+    {
+        "id": 33,
+        "title": "Bóxer Palmeras francia",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_825560-MLA78729368663_082024-F.webp"
+    },
+    {
+        "id": 34,
+        "title": "Bóxer Palmeras bordo",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_708901-MLA78729033703_082024-F.webp"
+    },
+    {
+        "id": 35,
+        "title": "Bóxer Palmeras blanco",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_727764-MLA78496761912_082024-F.webp"
+    },
+    {
+        "id": 36,
+        "title": "Bóxer Palmeras gris",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_994141-MLA78496761400_082024-F.webp"
+    },
+    {
+        "id": 37,
+        "title": "Bóxer Palmeras azul marino",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_642529-MLA78496752368_082024-F.webp"
+    },
+    {
+        "id": 38,
+        "title": "Bóxer Palmeras militar",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_708429-MLA78496762444_082024-F.webp"
+    },
+    {
+        "id": 39,
+        "title": "Bóxer Palmeras negro",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_764697-MLA78729505311_082024-F.webp"
+    },
+    {
+        "id": 40,
+        "title": "Bóxer Palmeras turquesa",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_705090-MLA78496574358_082024-F.webp"
+    },
+    {
+        "id": 41,
+        "title": "Bóxer Hawaian azul",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_818748-MLA77631099051_072024-F.webp"
+    },
+    {
+        "id": 42,
+        "title": "Bóxer Kubik 3d rojo",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_719004-MLA73937285660_012024-F.webp"
+    },
+    {
+        "id": 43,
+        "title": "Bóxer Kubik 3d negro",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_884796-MLA73937059104_012024-F.webp"
+    },
+    {
+        "id": 44,
+        "title": "Bóxer Kubik 3d azul",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_969601-MLA73937118906_012024-F.webp"
+    },
+    {
+        "id": 45,
+        "title": "Bóxer Geometrico Red turquesa",
+        "description": "  ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_823313-MLA73937127466_012024-F.webp"
+    },
+    {
+        "id": 46,
+        "title": "Bóxer Geometrico Red negro",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_633092-MLA73937127572_012024-F.webp"
+    },
+    {
+        "id": 47,
+        "title": "Bóxer Geometrico Red fucsia",
+        "description": " ",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_966427-MLA74040224139_012024-F.webp"
+    },
+    {
+        "id": 48,
+        "title": "Bóxer Geometrico Red amarillo",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_649313-MLA74040536621_012024-F.webp"
+    },
+    {
+        "id": 49,
+        "title": "Bóxer Hibiscus Silver negro",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_937155-MLA73937124730_012024-F.webp"
+    },
+    {
+        "id": 50,
+        "title": "Bóxer Hibiscus Silver blanco",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_919687-MLA74039944705_012024-F.webp"
+    },
+    {
+        "id": 51,
+        "title": "Bóxer Hibiscus Silver azul",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_914304-MLA74040231439_012024-F.webp"
+    },
+    {
+        "id": 52,
+        "title": "Bóxer Multigeo fucsia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_962560-MLA74039900621_012024-F.webp"
+    },
+    {
+        "id": 53,
+        "title": "Bóxer Multigeo negro/rojo",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_639498-MLA74040167441_012024-F.webp"
+    },
+    {
+        "id": 54,
+        "title": "Bóxer Multigeo turquesa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_916843-MLA74040147717_012024-F.webp"
+    },
+    {
+        "id": 55,
+        "title": "Bóxer Plumas petrolio",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_613122-MLA74040808215_012024-F.webp"
+    },
+    {
+        "id": 56,
+        "title": "Bóxer Plumas negro",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_824019-MLA74040857621_012024-F.webp"
+    },
+    {
+        "id": 57,
+        "title": "Bóxer Plumas marino",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_965260-MLA74040857829_012024-F.webp"
+    },
+    {
+        "id": 58,
+        "title": "Bóxer Plumas gris",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_918188-MLA73937528248_012024-F.webp"
+    },
+    {
+        "id": 59,
+        "title": "Bóxer Paint blanco/negro",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_844001-MLA74040852105_012024-F.webp"
+    },
+    {
+        "id": 60,
+        "title": "Bóxer Paint turquesa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_726101-MLA73937571512_012024-F.webp"
+    },
+    {
+        "id": 61,
+        "title": "Bóxer Paint rosa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_786861-MLA73937581632_012024-F.webp"
+    },
+    {
+        "id": 62,
+        "title": "Bóxer Paint gris",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_649335-MLA74040891283_012024-F.webp"
+    },
+    {
+        "id": 63,
+        "title": "Bóxer Paint marino",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_963353-MLA74040831887_012024-F.webp"
+    },
+    {
+        "id": 64,
+        "title": "Bóxer Paint militar",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_875149-MLA74040851797_012024-F.webp"
+    },
+    {
+        "id": 65,
+        "title": "Bóxer Paint bordo",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_719131-MLA74040841757_012024-F.webp"
+    },
+    {
+        "id": 66,
+        "title": "Bóxer Binario Camo fucsia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_886464-MLA73937141982_012024-F.webp"
+    },
+    {
+        "id": 67,
+        "title": "Bóxer Binario Camo gris",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_700630-MLA74040462123_012024-F.webp"
+    },
+    {
+        "id": 68,
+        "title": "Bóxer Binario Camo militar",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_729279-MLA73937082208_012024-F.webp"
+    },
+    {
+        "id": 69,
+        "title": "Bóxer Binario Camo turquesa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_993568-MLA73937131592_012024-F.webp"
+    },
+    {
+        "id": 70,
+        "title": "Bóxer Planta Bicolor negro/lima",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_621807-MLA73936667880_012024-F.webp"
+    },
+    {
+        "id": 71,
+        "title": "Bóxer Planta Bicolor negro/fucsia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_745987-MLA73936454520_012024-F.webp"
+    },
+    {
+        "id": 72,
+        "title": "Bóxer Planta Bicolor negro/turquesa",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_756144-MLA73936667972_012024-F.webp"
+    },
+    {
+        "id": 73,
+        "title": "Bóxer Planta Bicolor negro/gris",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_718764-MLA74039968301_012024-F.webp"
+    },
+    {
+        "id": 74,
+        "title": "Bóxer Orchid fucsia",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_710603-MLA73937064664_012024-F.webp"
+    },
+    {
+        "id": 75,
+        "title": "Bóxer Orchid marino",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_750992-MLA73937124482_012024-F.webp"
+    },
+    {
+        "id": 76,
+        "title": "Bóxer London Flores verde",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_711552-MLA73937116716_012024-F.webp"
+    },
+    {
+        "id": 77,
+        "title": "Bóxer London Flores rojo",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_796907-MLA74040505843_012024-F.webp"
+    },
+    {
+        "id": 78,
+        "title": "Bóxer Plantas negro",
+        "description": "",
+        "Price": 9000,
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_683798-MLA74040898855_012024-F.webp"
+    },
+    {
+        "id": 79,
+        "title": "Bóxer Plantas marino",
+        "description": "",
+        "Price": 9000,
+        "color":"",
+        "talles": "",
+        "URLimg": "https://http2.mlstatic.com/D_NQ_NP_2X_943896-MLA74040858917_012024-F.webp"
+    }
+]

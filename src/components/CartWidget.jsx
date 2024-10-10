@@ -6,7 +6,9 @@ const CartWidget = () => {
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
-    setCount(count + 1);
+    if (count < 25) {
+      setCount(count + 1);
+    }
   };
 
   const handleDecrement = () => {

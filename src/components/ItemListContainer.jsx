@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
+import products from "../assets/MOCK_DATA.json"
+import ItemList from "./ItemList"
 
 const ItemListContainer = () => {
-  return (
-    <div>
-      <p>¡Bienvenido a la preentrega 1 de Nicolas Galarza Vazquez!</p>
-    </div>
-  );
+  
+  console.log(products)
+
+  return<ItemList products={products}/>
 };
 
 export default ItemListContainer;

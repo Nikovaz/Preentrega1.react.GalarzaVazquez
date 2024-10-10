@@ -1,16 +1,17 @@
-// App.jsx
 import React from 'react';
+import products from './assets/MOCK_DATA.json'
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
-import Greeting from './components/Greeting'; // Importamos el componente Greeting
 
 function App() {
+
+  console.log(products);
   return (
     <>
       <NavBar />
+  
       <ItemListContainer />
-      <Greeting message="Preentrega N°1" /> {/* Agregamos el componente Greeting */}
-      {/* Otros componentes o contenido */}
+   
     </>
   );
 }
