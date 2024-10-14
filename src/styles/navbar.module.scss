@@ -1,0 +1,46 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ffffff; /* Gris claro */
+  border-bottom: 2px solid #000000; /* Línea negra inferior */
+  display: flex; /* Para que el ul use flexbox */
+  justify-content: space-between; /* Asegura que los elementos se distribuyen entre el principio y el final */
+  align-items: center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #000000; /* Negro */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+li a:hover {
+  background-color: #f4de62; /* Amarillo dorado */
+  color: #ffffff; /* Texto blanco */
+}
+
+li:first-child {
+  width: 50px;
+  margin-right: 10px;
+}
+
+li:first-child img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%; /* Bordes redondeados para el logo */
+}
+
+.cart-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}

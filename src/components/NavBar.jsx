@@ -1,20 +1,60 @@
-import React from 'react';
-import '../styles/navbar.scss';
-import CartWidget from './cartWidget';
+import React from "react";
+import styles from "../styles/navbar.module.scss";
+import { Link, NavLink } from "react-router-dom";
+import CartWidget from "./cartWidget";
 import logo from '../assets/logoCharly.png';
 
 const NavBar = () => {
   return (
-    <ul>
+    <nav>
+      <ul className={styles.list}>
       <li>
         <img src={logo} alt="Logo" />
       </li>
-      <li><a className="active" href="#home">Home</a></li>
-      <li><a href='#contact'>Estampados</a></li>
-      <li><a href='#about'>Lisos</a></li>
-      <CartWidget/>
-    </ul>
-  )
-}
+        <li>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/home"}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/estampados"}
+          >
+            Estampados
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/lisos"}
+          >
+            Lisos
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive ? styles.isActive : styles.notActive;
+            }}
+            to={"/category/Medias"}
+          >
+            Medias
+          </NavLink>
+        </li>
+        <CartWidget/>
+      </ul>
+    </nav>
+  );
+};
 
 export default NavBar;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import cart from '../assets/cart.svg'; 
-import '../styles/cartwidget.scss'; 
+import cart from '../assets/cart.svg';
+import '../styles/cartwidget.scss';
 
 const CartWidget = () => {
   const [count, setCount] = useState(0);
@@ -19,10 +19,12 @@ const CartWidget = () => {
 
   return (
     <div className="cart-widget">
-      <button onClick={handleDecrement}>-</button>
-      <span>({count})</span>
-      <button onClick={handleIncrement}>+</button>
-      <img src={cart} alt="cart" />
+      <div className="quantity-controls">
+        <button onClick={handleDecrement} className="control-button">-</button>
+        <span className="quantity">{count}</span>
+        <button onClick={handleIncrement} className="control-button">+</button>
+      </div>
+      <img src={cart} alt="cart" className="cart-icon" />
     </div>
   );
 };

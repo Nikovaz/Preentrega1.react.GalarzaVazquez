@@ -1,18 +1,21 @@
-import React from 'react';
-import products from './assets/MOCK_DATA.json'
-import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import Layout from './components/Layout';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NotFound from './components/Notfound';
+import ItemDetailContainer from './components/ItemDetailConteiner';
 
 function App() {
-
-  console.log(products);
   return (
-    <>
-      <NavBar />
-  
-      <ItemListContainer />
-   
-    </>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
+          <Route path="/detail/:id" element={<ItemDetailContainer />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
