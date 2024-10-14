@@ -455,7 +455,7 @@
         "id": 35,
         "title": "Soquete Liso Art. 971",
         "description": "Nuestras medias invisibles para hombre son la elección perfecta para un confort discreto. Hechas con algodón suave, se adaptan a cualquier calzado sin sacrificar el estilo.",
-        "category": "Medias",
+        "category": ["Medias", "home"],  
         "price": 3500,
         "color":"Gris, Negro, Azul marino",
         "talles": "Unico",

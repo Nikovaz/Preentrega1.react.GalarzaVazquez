@@ -11,16 +11,7 @@ const NavBar = () => {
       <li>
         <img src={logo} alt="Logo" />
       </li>
-        <li>
-          <NavLink
-            className={({ isActive }) => {
-              return isActive ? styles.isActive : styles.notActive;
-            }}
-            to={"/category/home"}
-          >
-            Home
-          </NavLink>
-        </li>
+       
         <li>
           <NavLink
             className={({ isActive }) => {
