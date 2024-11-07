@@ -12,6 +12,8 @@
   max-width: 1200px; 
   margin: 0 auto;
   flex-wrap: wrap; 
+  position: relative; 
+  z-index: 1;
 }
 
 .imageGallery {
@@ -27,6 +29,8 @@
   flex-direction: column;
   width: 100%;
   max-width: 600px; 
+  position: relative; 
+  z-index: 1; 
 }
 
 .image {
@@ -51,6 +55,8 @@
 
 .options {
   margin-bottom: 20px;
+  position: relative; 
+  z-index: 1; 
 }
 
 .optionGroup {
@@ -70,6 +76,8 @@
   margin: 5px 0;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
+  position: relative; 
+  z-index: 1; 
 }
 
 .optionItem:hover {

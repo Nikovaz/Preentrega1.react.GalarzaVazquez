@@ -1,30 +1,47 @@
-import React, { useState } from 'react';
-import cart from '../assets/cart.svg';
-import '../styles/cartwidget.scss';
+import React from 'react';
+import { useCart } from '../context/CartProvider';
+import styles from '../styles/cartWidget.module.scss';
 
 const CartWidget = () => {
-  const [count, setCount] = useState(0);
-
-  const handleIncrement = () => {
-    if (count < 25) {
-      setCount(count + 1);
-    }
-  };
-
-  const handleDecrement = () => {
-    if (count > 0) {
-      setCount(count - 1);
-    }
-  };
+  const { cartItems, incrementItem, decrementItem, removeFromCart } = useCart();
 
   return (
-    <div className="cart-widget">
-      <div className="quantity-controls">
-        <button onClick={handleDecrement} className="control-button">-</button>
-        <span className="quantity">{count}</span>
-        <button onClick={handleIncrement} className="control-button">+</button>
+    <div className={styles.dropdown}>
+      <button className={styles.dropbtn}>
+        🛒 Carrito ({cartItems.length})
+      </button>
+      <div className={styles.dropdownContent}>
+        {cartItems.length === 0 ? (
+          <div>Tu carrito está vacío</div>
+        ) : (
+          cartItems.map((item, index) => (
+            <div key={index} className={styles.cartItem}>
+              <img src={item.URLimg} alt={item.title} />
+              <div>
+                <h4>{item.title}</h4>
+                <p>Precio: ${item.price}</p>
+                <p>Cantidad: {item.quantity}</p>
+                <p>Color: {item.selectedColor}</p>
+                <p>Talla: {item.selectedSize}</p>
+                <div className={styles.buttonGroup}>
+                  <button onClick={() => {
+                    console.log('Incrementar:', item.id);
+                    incrementItem(item.id);
+                  }}>+</button>
+                  <button onClick={() => {
+                    console.log('Decrementar:', item.id);
+                    decrementItem(item.id);
+                  }}>-</button>
+                  <button onClick={() => {
+                    console.log('Eliminar:', item.id);
+                    removeFromCart(item.id);
+                  }}>x</button>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
       </div>
-      <img src={cart} alt="cart" className="cart-icon" />
     </div>
   );
 };

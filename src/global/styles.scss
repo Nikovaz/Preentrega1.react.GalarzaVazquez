@@ -1,32 +1,59 @@
 :root {
+  /* Variables comunes */
   font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: #333333; /* Gris oscuro para el texto */
-  background-color: #c27f7f; /* Gris claro para el fondo */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
 
-  /* Colores adicionales */
-  --primary-color: #ffd700; /* Amarillo dorado */
-  --secondary-color: #e0e0e0; /* Gris claro para elementos */
-  --accent-color: #780000; /* Rojo oscuro */
-  --text-color: #333333; /* Gris oscuro para el texto */
+  /* Colores claros */
+  --background-color-light: #c27f7f;
+  --text-color-light: #333333;
+  --primary-color-light: #ffd700;
+  --accent-color-light: #780000;
+
+  /* Colores oscuros */
+  --background-color-dark: #333333;
+  --text-color-dark: #ffffff;
+  --primary-color-dark: #ff9900;
+  --accent-color-dark: #ffcc00;
 }
 
-/* Aplicar colores a elementos */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-a {
-  color: var(--primary-color);
+/* Modo claro */
+body.light-mode {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
 }
 
-a:hover {
-  color: var(--accent-color);
+body.light-mode a {
+  color: var(--primary-color-light);
+}
+
+body.light-mode a:hover {
+  color: var(--accent-color-light);
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+body.dark-mode a {
+  color: var(--primary-color-dark);
+}
+
+body.dark-mode a:hover {
+  color: var(--accent-color-dark);
+}
+
+.carousel .slider {
+  position: static !important; // Asegura que el slider no tenga posición relativa
 }

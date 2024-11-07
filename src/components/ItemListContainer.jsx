@@ -3,7 +3,7 @@ import mockProducts from "../assets/MOCK_DATA.json";
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
-import "../styles/itemlistconteiner.module.scss";
+import "../styles/itemlistcontainer.module.scss";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);

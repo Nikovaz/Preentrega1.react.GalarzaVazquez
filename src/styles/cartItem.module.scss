@@ -1,0 +1,42 @@
+.cartItem {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+
+  img {
+    max-width: 50px;
+    margin-right: 10px;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .buttonGroup {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #555;
+      }
+    }
+  }
+}

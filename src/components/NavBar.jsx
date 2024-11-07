@@ -1,22 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "../styles/navbar.module.scss";
-import { Link, NavLink } from "react-router-dom";
-import CartWidget from "./cartWidget";
+import { NavLink } from "react-router-dom";
+import Switch from "./Switch";
 import logo from '../assets/logoCharly.png';
+import { Theme } from '../context/ThemeProvider';
+import CartWidget from './CartWidget'; 
 
 const NavBar = () => {
+  const { dark, setDark } = useContext(Theme);
+
   return (
     <nav>
       <ul className={styles.list}>
-      <li>
-        <img src={logo} alt="Logo" />
-      </li>
-       
+        <li>
+          <img src={logo} alt="Logo" />
+        </li>
         <li>
           <NavLink
-            className={({ isActive }) => {
-              return isActive ? styles.isActive : styles.notActive;
-            }}
+            className={({ isActive }) => (isActive ? styles.isActive : styles.notActive)}
             to={"/category/estampados"}
           >
             Estampados
@@ -24,9 +25,7 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => {
-              return isActive ? styles.isActive : styles.notActive;
-            }}
+            className={({ isActive }) => (isActive ? styles.isActive : styles.notActive)}
             to={"/category/lisos"}
           >
             Lisos
@@ -34,15 +33,18 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink
-            className={({ isActive }) => {
-              return isActive ? styles.isActive : styles.notActive;
-            }}
+            className={({ isActive }) => (isActive ? styles.isActive : styles.notActive)}
             to={"/category/Medias"}
           >
             Medias
           </NavLink>
         </li>
-        <CartWidget/>
+        <li>
+          <Switch checked={dark} setChecked={setDark} />
+        </li>
+        <li className={styles.cartWrapper}>
+          <CartWidget /> 
+        </li>
       </ul>
     </nav>
   );

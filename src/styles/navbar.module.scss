@@ -2,12 +2,36 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #ffffff; /* Gris claro */
-  border-bottom: 2px solid #000000; /* Línea negra inferior */
-  display: flex; /* Para que el ul use flexbox */
-  justify-content: space-between; /* Asegura que los elementos se distribuyen entre el principio y el final */
+  overflow: visible;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative; 
+  z-index: 10; 
+
+  &.darkMode {
+    background-color: #333;
+    border-bottom: 2px solid #fff;
+    li a {
+      color: #fff;
+      &:hover {
+        background-color: #ff9900;
+        color: #fff;
+      }
+    }
+  }
+
+  &.lightMode {
+    background-color: #ffffff;
+    border-bottom: 2px solid #000;
+    li a {
+      color: #000;
+      &:hover {
+        background-color: #f4de62;
+        color: #ffffff;
+      }
+    }
+  }
 }
 
 li {
@@ -16,16 +40,11 @@ li {
 
 li a {
   display: block;
-  color: #000000; /* Negro */
+  color: inherit;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
-}
-
-li a:hover {
-  background-color: #f4de62; /* Amarillo dorado */
-  color: #ffffff; /* Texto blanco */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 li:first-child {
@@ -36,11 +55,23 @@ li:first-child {
 li:first-child img {
   width: 100%;
   height: auto;
-  border-radius: 50%; /* Bordes redondeados para el logo */
+  border-radius: 50%;
 }
 
-.cart-container {
+.cartContainer {
   margin-left: auto;
   display: flex;
   align-items: center;
+  gap: 10px; 
+}
+
+.cartIcon {
+  width: 24px; 
+  height: 24px;
+  cursor: pointer;
+}
+
+.cartWrapper {
+  position: relative;
+  z-index: 1000; 
 }
