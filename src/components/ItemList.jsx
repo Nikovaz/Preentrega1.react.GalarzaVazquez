@@ -1,19 +1,20 @@
-import React from "react";
-import Item from "./Item";
-import styles from '../styles/itemlist.module.scss'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Item from './Item';
+import '../styles/itemlistcontainer.module.scss';
 
+const ItemList = ({ products }) => {
+  return (
+    <div className="item-list">
+      {products.map((item) => (
+        <Item key={item.id} item={item} />
+      ))}
+    </div>
+  );
+};
 
-const ItemList = ({ products}) => {
-    return (
-        <div className={styles.container}>
-            {products.map((product) => {
-                return (
-                    <Item item={product} key={product.id}/>
-
-                )
-})}
-</div>
-)
-}
+ItemList.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default ItemList;

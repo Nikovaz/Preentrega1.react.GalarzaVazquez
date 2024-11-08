@@ -1,29 +1,48 @@
 import React from 'react';
-import CartItem from './CartItem';
 import { useCart } from '../context/CartProvider';
 import { useNavigate } from 'react-router-dom';
-import styles from '../styles/cart.module.scss';
+import '../styles/cart.module.scss';
 
 const Cart = () => {
-  const { cartItems } = useCart();
+  const { cartItems, incrementItem, decrementItem, removeFromCart, calculateTotal } = useCart();
   const navigate = useNavigate();
 
-  const handleBuyNow = () => {
-    console.log('Redirigir a checkout');
+  const handleCheckout = () => {
     navigate('/checkout');
   };
 
-  if (cartItems.length === 0) {
-    return <div>Tu carrito está vacío</div>;
-  }
-
   return (
-    <div className={styles.cartContainer}>
-      <h1>Tu Carrito de Compras</h1>
-      {cartItems.map((item, index) => (
-        <CartItem key={index} item={item} />
-      ))}
-      <button onClick={handleBuyNow} className={styles.buyNow}>Comprar ahora</button>
+    <div className="cart">
+      <h2>Your Cart</h2>
+      {cartItems.length === 0 ? (
+        <p>Your cart is empty</p>
+      ) : (
+        <div>
+          {cartItems.map((item) => (
+            <div key={item.id} className="cart-item">
+              <div className="item-details">
+                <img src={item.URLimg[0]} alt={item.title} />
+                <div className="details">
+                  <h4>{item.title}</h4>
+                  <p>Color: {item.selectedColor}</p>
+                  <p>Size: {item.selectedSize}</p>
+                  <p>Price: ${item.price}</p>
+                  <div className="quantity-control">
+                    <button onClick={() => decrementItem(item.id)}>-</button>
+                    <span>{item.quantity}</span>
+                    <button onClick={() => incrementItem(item.id)}>+</button>
+                  </div>
+                  <button onClick={() => removeFromCart(item.id)}>Remove</button>
+                </div>
+              </div>
+            </div>
+          ))}
+          <div className="cart-total">
+            <h3>Total: ${calculateTotal().toFixed(2)}</h3>
+          </div>
+          <button onClick={handleCheckout}>Checkout</button>
+        </div>
+      )}
     </div>
   );
 };

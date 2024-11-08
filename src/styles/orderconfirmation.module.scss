@@ -1,0 +1,87 @@
+.order-confirmation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .order-confirmation-container h1,
+  .order-confirmation-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .order-confirmation-container p {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  .order-confirmation-container .order-summary,
+  .order-confirmation-container .cart-summary {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .order-confirmation-container .order-summary ul,
+  .order-confirmation-container .cart-summary ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+  
+  .order-confirmation-container .order-summary li,
+  .order-confirmation-container .cart-summary li {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .order-confirmation-container .order-summary li div,
+  .order-confirmation-container .cart-summary li div {
+    display: flex;
+    align-items: center;
+    width: 100%; 
+    position: static;
+  }
+  
+  .order-confirmation-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .cart-summary ul li {
+    flex-wrap: wrap;
+  }
+  
+  .cart-summary .item {
+    width: 100%; 
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

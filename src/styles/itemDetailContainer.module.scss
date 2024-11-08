@@ -1,39 +1,39 @@
-// styles/itemDetailContainer.module.scss
-.container {
+.item-detail-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  z-index: 1; 
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .carousel {
   width: 100%;
-  max-width: 600px; 
-  z-index: 1; 
+  max-width: 100px; 
+  margin: 20px 0;
 }
 
 .carousel .slider {
   margin: 0;
   padding: 0;
   list-style: none;
-  width: 100%;
-  z-index: 1; 
-  position: static !important; 
+  width: 10%;
+  position: static !important;
 }
 
 .carousel .slide img {
   width: 100%;
   height: auto;
-  border-radius: 0; 
-  z-index: 1; 
+  border-radius: 8px;
 }
 
 .carousel .thumb {
   width: auto;
-  height: 100px;
+  height: 70px; 
   margin: 5px;
   padding: 0;
-  border-radius: 0; 
-  z-index: 1; 
+  border-radius: 8px;
 }

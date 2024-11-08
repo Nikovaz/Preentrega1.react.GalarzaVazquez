@@ -1,77 +1,88 @@
 .dropdown {
   position: relative;
   display: inline-block;
+}
 
-  .dropbtn {
-    background-color: #333;
-    color: white;
-    padding: 10px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.dropbtn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-  .dropbtn:hover {
-    background-color: #555;
-  }
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  right: 0; 
+}
 
-  .dropdownContent {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1000;
-    max-height: 400px;
-    overflow-y: auto;
-    transition: max-height 0.3s ease-in-out;
+.dropdown:hover .dropdownContent {
+  display: block;
+}
 
-    .cartItem {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
+.cartItem {
+  display:flex; 
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
 
-      img {
-        max-width: 50px;
-        margin-right: 10px;
-      }
+.cartItem img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
 
-      h4 {
-        margin: 0;
-        font-size: 14px;
-      }
+.cartItem div {
+  flex: 1;
+  margin-left: 10px;
+}
 
-      p {
-        margin: 0;
-        font-size: 12px;
-      }
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  justify-content: center;
+}
 
-      .buttonGroup {
-        display: flex;
-        align-items: center;
-        gap: 5px;
+.buttonGroup button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
-        button {
-          background: #333;
-          color: white;
-          border: none;
-          padding: 5px;
-          font-size: 16px;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
+.buttonGroup button:hover {
+  background-color: #0056b3;
+}
 
-          &:hover {
-            background-color: #555;
-          }
-        }
-      }
-    }
-  }
+.totalAmount {
+  text-align: right;
+  margin-top: 20px;
+}
 
-  &:hover .dropdownContent {
-    display: block;
-  }
+.checkoutButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.checkoutButton:hover {
+  background-color: #218838;
 }

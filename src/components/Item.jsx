@@ -1,31 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from '../styles/item.module.scss';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import '../styles/item.module.scss';
 
 const Item = ({ item }) => {
-  const imageUrl = Array.isArray(item.URLimg) ? item.URLimg[0] : item.URLimg;
+  const navigate = useNavigate();
+
+  const handleDetail = () => {
+    navigate(`/detail/${item.id}`);
+  };
+
   return (
-    <div className={styles.container}>
-      <img src={imageUrl} alt={item.title} /> 
+    <div className="item">
+      <div className="image-container">
+        {item.URLimg && item.URLimg.length > 0 ? (
+          <img src={item.URLimg[0]} alt={item.title} />
+        ) : (
+          <div>No image available</div>
+        )}
+      </div>
       <h2>{item.title}</h2>
-      <span>${item.price}</span>
-      <NavLink to={`/detail/${item.id}`}>
-        <button className={styles.button}>Detail</button>
-      </NavLink>
+      <p>Price: ${item.price}</p>
+      <button onClick={handleDetail} className="button">Detail</button>
     </div>
   );
 };
 
 Item.propTypes = {
   item: PropTypes.shape({
-    URLimg: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
-    ]).isRequired,
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    URLimg: PropTypes.arrayOf(PropTypes.string), 
   }).isRequired,
 };
 

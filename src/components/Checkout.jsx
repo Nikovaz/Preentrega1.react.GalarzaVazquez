@@ -1,78 +1,155 @@
-// components/Checkout.jsx
 import React, { useState } from 'react';
 import { useCart } from '../context/CartProvider';
-import styles from '../styles/checkout.module.scss';
+import { useNavigate } from 'react-router-dom';
+import { db } from '../firebase/config';
+import { collection, addDoc, getDocs, query, where, updateDoc, serverTimestamp, doc } from 'firebase/firestore';
+import '../styles/checkout.module.scss';
 
 const Checkout = () => {
-  const { cartItems } = useCart();
-  const [paymentInfo, setPaymentInfo] = useState({
-    name: '',
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
-  });
+  const { cartItems, removeFromCart, getTotalPrice, clearCart } = useCart();
+  const [customerName, setCustomerName] = useState('');
+  const [customerLastName, setCustomerLastName] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
+  const [confirmEmail, setConfirmEmail] = useState('');
+  const [comment, setComment] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setPaymentInfo({ ...paymentInfo, [name]: value });
+  const handleRemove = (id) => {
+    removeFromCart(id);
   };
 
-  const handlePayment = () => {
-    console.log('Procesando pago con la siguiente información:', paymentInfo);
-    alert('Pago procesado con éxito');
-    // Aquí puedes añadir la lógica para procesar el pago
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    if (customerEmail !== confirmEmail) {
+      setError('Emails do not match.');
+      return;
+    }
+
+    const order = {
+      customerName,
+      customerLastName,
+      customerPhone,
+      customerEmail,
+      comment,
+      items: cartItems,
+      total: getTotalPrice(),
+      date: serverTimestamp(),
+    };
+
+    try {
+      const docRef = await addDoc(collection(db, 'orders'), order);
+
+      for (const item of cartItems) {
+        const q = query(collection(db, 'products'), where('id', '==', item.id));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((productDoc) => {
+          const productRef = doc(db, 'products', productDoc.id);
+          updateDoc(productRef, { stock: productDoc.data().stock - item.quantity });
+        });
+      }
+
+      console.log('Orden de pago generada con ID: ', docRef.id);
+      clearCart();
+      navigate('/order-confirmation', { state: { order: { ...order, id: docRef.id } } });
+    } catch (error) {
+      console.error('Error al generar la orden de pago: ', error);
+      setError('Error generating order.');
+    }
   };
 
   return (
-    <div className={styles.checkoutContainer}>
-      <h1>Proceso de Pago</h1>
-      <div className={styles.cartSummary}>
-        <h2>Resumen del Carrito</h2>
+    <div className="checkout-container">
+      <h1>Checkout</h1>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={customerName}
+            onChange={(e) => setCustomerName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            value={customerLastName}
+            onChange={(e) => setCustomerLastName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            value={customerPhone}
+            onChange={(e) => setCustomerPhone(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={customerEmail}
+            onChange={(e) => setCustomerEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="confirmEmail">Confirm Email:</label>
+          <input
+            type="email"
+            id="confirmEmail"
+            value={confirmEmail}
+            onChange={(e) => setConfirmEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="comment">Comment (max 100 characters):</label>
+          <textarea
+            id="comment"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+            maxLength="100"
+          />
+        </div>
+        <div className="form-group">
+          <h2>Total: ${getTotalPrice().toFixed(2)}</h2>
+        </div>
+        <div className="form-group">
+          <button type="submit">Generate Order</button>
+        </div>
+      </form>
+
+      <h2>Cart Items</h2>
+      <ul>
         {cartItems.map((item, index) => (
-          <div key={index} className={styles.cartItem}>
-            <img src={item.URLimg[0]} alt={item.title} />
-            <div>
-              <h4>{item.title}</h4>
-              <p>Precio: ${item.price}</p>
-              <p>Cantidad: {item.quantity}</p>
-              <p>Color: {item.selectedColor}</p>
-              <p>Talla: {item.selectedSize}</p>
+          <li key={`${item.id}-${index}`} style={{ display: 'flex', alignItems: 'center', borderBottom: '1px solid #ddd', padding: '10px 0' }}>
+            <div style={{ display: 'flex', alignItems: 'center', width: '100%' }}>
+              <img src={item.URLimg[0]} alt={item.title} style={{ width: '75px', height: '75px', marginRight: '10px', objectFit: 'cover', borderRadius: '50%' }} />
+              <span style={{ fontSize: '1em', marginRight: 'auto' }}>{item.title} - ${item.price} x {item.quantity}</span>
             </div>
-          </div>
+            <button
+              onClick={() => handleRemove(item.id)}
+              style={{ backgroundColor: '#dc3545', color: '#fff', border: 'none', padding: '5px 10px', borderRadius: '4px', cursor: 'pointer', transition: 'background-color 0.3s ease' }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
-      </div>
-      <div className={styles.paymentForm}>
-        <h2>Información de Pago</h2>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nombre en la tarjeta"
-          value={paymentInfo.name}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="cardNumber"
-          placeholder="Número de la tarjeta"
-          value={paymentInfo.cardNumber}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="expiryDate"
-          placeholder="Fecha de expiración (MM/AA)"
-          value={paymentInfo.expiryDate}
-          onChange={handleInputChange}
-        />
-        <input
-          type="text"
-          name="cvv"
-          placeholder="CVV"
-          value={paymentInfo.cvv}
-          onChange={handleInputChange}
-        />
-        <button onClick={handlePayment}>Pagar</button>
-      </div>
+      </ul>
     </div>
   );
 };

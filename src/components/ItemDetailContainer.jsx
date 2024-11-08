@@ -1,84 +1,118 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { db } from '../firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
 import { useCart } from '../context/CartProvider';
 import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-import mockProducts from "../assets/MOCK_DATA.json"; 
-import styles from '../styles/itemDetailContainer.module.scss'; 
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import '../styles/itemDetailContainer.module.scss';
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { addToCart } = useCart();
-  const [item, setItem] = useState(null);
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-  const [quantity, setQuantity] = useState(1); 
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const foundItem = mockProducts.find((product) => product.id === parseInt(id));
-    setItem(foundItem);
+    const fetchProduct = async () => {
+      if (!id) {
+        console.error('No ID provided');
+        return;
+      }
+      setLoading(true);
+      try {
+        const collections = ['boxer', 'medias'];
+        let productFound = false;
+
+        for (let collectionName of collections) {
+          const docRef = doc(db, collectionName, id);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+            const data = docSnap.data();
+            data.URLimg = data.URLimg.split(',').map(url => url.trim());
+            data.colors = data.colors.split(',').map(color => color.trim());
+            data.talles = data.talles.split(',').map(size => size.trim());
+            setProduct({ id: docSnap.id, ...data });
+            productFound = true;
+            console.log(`Producto encontrado en la colección ${collectionName}:`, data);
+            break;
+          }
+        }
+
+        if (!productFound) {
+          console.log('No se encontró el producto.');
+        }
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      }
+      setLoading(false);
+    };
+
+    fetchProduct();
   }, [id]);
 
   const handleAddToCart = () => {
-    if (item && selectedColor && selectedSize) {
-      const itemToAdd = {
-        ...item,
-        selectedColor,
-        selectedSize,
-        quantity, 
-      };
-      addToCart(itemToAdd);
-      console.log('Producto agregado al carrito con color, talla y cantidad:', itemToAdd);
-    } else {
-      console.log('Por favor selecciona un color y una talla.');
-    }
+    const productToAdd = { ...product, selectedColor, selectedSize };
+    addToCart(productToAdd);
+    console.log('Producto añadido al carrito:', productToAdd);
   };
 
-  if (!item) {
+  const handleBuyNow = () => {
+    const productToAdd = { ...product, selectedColor, selectedSize };
+    addToCart(productToAdd);
+    navigate('/checkout');
+  };
+
+  if (loading) {
     return <div>Loading...</div>;
   }
 
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   return (
-    <div className={styles.container}>
-      <h1>{item.title}</h1>
-      <Carousel showArrows={true} showThumbs={true} infiniteLoop={true} useKeyboardArrows={true}>
-        {item.URLimg.map((img, index) => (
-          <div key={index} className={styles.carouselItem}>
-            <img src={img} alt={item.title} />
+    <div className="item-detail-container">
+      <h1>{product.title}</h1>
+      <Carousel 
+        showArrows={true} 
+        showThumbs={true} 
+        infiniteLoop={true} 
+        useKeyboardArrows={true}
+        className="carousel"
+      >
+        {product.URLimg.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`Product ${index}`} />
           </div>
         ))}
       </Carousel>
-      <p>{item.description}</p>
-      <p>Precio: ${item.price}</p>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
       <div>
-        <label>Color:</label>
-        <select onChange={(e) => setSelectedColor(e.target.value)} value={selectedColor}>
+        <label htmlFor="colors">Color:</label>
+        <select id="colors" value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)}>
           <option value="">Selecciona un color</option>
-          {item.colors && item.colors.split(', ').map((color, index) => (
+          {product.colors.map((color, index) => (
             <option key={index} value={color}>{color}</option>
           ))}
         </select>
       </div>
       <div>
-        <label>Talla:</label>
-        <select onChange={(e) => setSelectedSize(e.target.value)} value={selectedSize}>
+        <label htmlFor="sizes">Talla:</label>
+        <select id="sizes" value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)}>
           <option value="">Selecciona una talla</option>
-          {item.talles && item.talles.split(', ').map((size, index) => (
+          {product.talles.map((size, index) => (
             <option key={index} value={size}>{size}</option>
           ))}
         </select>
       </div>
-      <div>
-        <label>Cantidad:</label>
-        <input
-          type="number"
-          min="1"
-          max={item.stock}
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
-      </div>
-      <button onClick={handleAddToCart}>Agregar al carrito</button>
+      <button onClick={handleAddToCart}>Agregar al Carrito</button>
+      <button onClick={handleBuyNow}>Comprar Ahora</button>
     </div>
   );
 };
