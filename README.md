@@ -24,3 +24,6 @@ Este proyecto fue creado con el objetivo de ofrecer una plataforma moderna y efi
 - **Carrito de compras**: Añade productos al carrito, modifica la cantidad y elimina artículos.
 - **Checkout**: Completa el proceso de compra proporcionando tu información personal y de contacto.
 - **Confirmación de pedido**: Recibe una confirmación de tu pedido en formato de ticket.
+![Vite + React - Brave 2024-11-07 22-35-24](https://github.com/user-attachments/assets/052cd34c-51fd-4e2a-bd23-87027a87a2e2)
+
+
